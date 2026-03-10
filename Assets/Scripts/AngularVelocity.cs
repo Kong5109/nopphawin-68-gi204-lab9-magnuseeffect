@@ -11,13 +11,13 @@ public class AngularVelocity : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Keyboard.current.aKey.wasPressedThisFrame)
+        if (Keyboard.current.aKey.isPressed)
         {
-            Vector3 direction = Vector3.up * angularSpeed;
-            rb.angularVelocity = direction;
-        }else if (Keyboard.current.aKey.wasReleasedThisFrame)
+            rb.angularVelocity = Vector3.up * angularSpeed;
+        }
+        else
         {
             rb.angularVelocity = Vector3.zero;
         }

@@ -9,7 +9,7 @@ public class TorqueRotate : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         rb.AddTorque(Vector3.right * torquePower);
     }
