@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class TorqueRotate : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class TorqueRotate : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.AddTorque(Vector3.right * torquePower);
+        if (Keyboard.current.dKey.isPressed)
+        {
+            rb.AddTorque(Vector3.forward * torquePower);
+        }
     }
 }
